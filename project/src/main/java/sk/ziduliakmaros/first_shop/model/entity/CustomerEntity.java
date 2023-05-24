@@ -27,7 +27,8 @@ public class CustomerEntity extends BaseEntity {
     @Column(name = "phoneNumber")
     private String phoneNumber;
 
-
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<CustomerAccountEntity> accounts = new ArrayList<>();
 
     public String getName() {
         return name;
@@ -77,5 +78,11 @@ public class CustomerEntity extends BaseEntity {
         this.phoneNumber = phoneNumber;
     }
 
+    public List<CustomerAccountEntity> getAccounts() {
+        return accounts;
+    }
 
+    public void setAccounts(List<CustomerAccountEntity> accounts) {
+        this.accounts = accounts;
+    }
 }
