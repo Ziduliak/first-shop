@@ -28,6 +28,7 @@ public class CustomerEntity extends BaseEntity {
     private String phoneNumber;
 
 
+
     public String getName() {
         return name;
     }
